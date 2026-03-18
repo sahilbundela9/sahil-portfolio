@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sahil Bundela — Portfolio
 
 A premium, fully responsive portfolio website built with **Vite + React**, featuring Framer Motion animations, dark/light mode, a custom cursor, and a deep ocean blue design system.
@@ -101,3 +102,7 @@ npm run build
 ---
 
 © 2025 Sahil Bundela · bundelasahil634@gmail.com
+=======
+# sahil-portfolio
+My Portfolio
+>>>>>>> 0d74a6aba79045c2ac8a7fb14256b5c67e1c6f26
