@@ -1,0 +1,133 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+  margin-bottom: 56px;
+}
+
+.card {
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  transition: all 0.35s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 130px; height: 130px;
+  background: radial-gradient(circle, rgba(0,180,216,0.09), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.card:hover::before { opacity: 1; }
+
+.featured {
+  border-color: rgba(0,180,216,0.28);
+  background: rgba(0,180,216,0.04);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(0,180,216,0.12);
+  border: 1px solid rgba(0,180,216,0.25);
+  border-radius: 99px;
+  padding: 3px 10px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.folderIcon {
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.cardLinks {
+  display: flex;
+  gap: 14px;
+}
+
+.iconLink {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  transition: color 0.22s, transform 0.22s;
+}
+.iconLink:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.cardName {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  flex: 1;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  background: rgba(0,180,216,0.09);
+  border: 1px solid rgba(0,180,216,0.2);
+  border-radius: 99px;
+  padding: 3px 11px;
+  letter-spacing: 0.04em;
+}
+
+/* CTA row */
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  border-radius: 16px;
+  border: 1px dashed var(--border);
+  background: var(--surface2);
+  flex-wrap: wrap;
+}
+
+.ctaText {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  flex: 1;
+  min-width: 180px;
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 22px; }
+  .cta { flex-direction: column; align-items: flex-start; gap: 14px; }
+}

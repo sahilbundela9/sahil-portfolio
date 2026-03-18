@@ -1,0 +1,170 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.tab {
+  padding: 8px 22px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.22s;
+}
+.tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.tabActive {
+  border-color: var(--accent);
+  background: rgba(0, 180, 216, 0.1);
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.skillCard {
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+.skillCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--bright-teal-blue), var(--turquoise-surf));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.38s ease;
+}
+.skillCard:hover::after { transform: scaleX(1); }
+
+.skillIcon { font-size: 2rem; line-height: 1; }
+
+.skillName {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.skillBarWrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.skillBar {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--bright-teal-blue), var(--turquoise-surf));
+}
+
+/* Progress bars */
+.progressSection {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px 40px;
+  margin-bottom: 56px;
+  backdrop-filter: blur(12px);
+}
+
+.progTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+.progRow { margin-bottom: 20px; }
+.progRow:last-child { margin-bottom: 0; }
+
+.progHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.progName { font-size: 0.88rem; color: var(--text); }
+.progPct {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.progTrack {
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progFill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--bright-teal-blue), var(--turquoise-surf));
+}
+
+/* Heatmap */
+.heatmapSection {}
+
+.heatmapGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.heatCell {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.04);
+  transition: transform 0.18s;
+  cursor: default;
+}
+.heatCell:hover { transform: scale(1.35); }
+
+.heatL0 { background: rgba(255,255,255,0.04); }
+.heatL1 { background: rgba(0,150,199,0.22); }
+.heatL2 { background: rgba(0,150,199,0.44); }
+.heatL3 { background: rgba(0,180,216,0.66); }
+.heatL4 { background: rgba(72,202,228,0.88); }
+
+.heatLegend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+.legendLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-faint);
+  margin: 0 4px;
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .progressSection { padding: 24px; }
+  .heatCell { width: 9px; height: 9px; }
+}

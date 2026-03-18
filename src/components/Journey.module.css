@@ -1,0 +1,163 @@
+.timeline {
+  position: relative;
+  padding: 16px 0 48px;
+  margin-bottom: 40px;
+}
+
+/* Center vertical line */
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border) 8%,
+    var(--border) 92%,
+    transparent
+  );
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+/* Left items: card on the left, dot on center */
+.left {
+  justify-content: flex-start;
+  padding-right: calc(50% + 40px);
+}
+
+/* Right items: card on the right, dot on center */
+.right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 40px);
+}
+
+/* Dot sits on the center line */
+.dot {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translateX(-50%);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 0 0 6px var(--bg), 0 0 20px var(--glow);
+}
+
+.dotIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cards */
+.card {
+  padding: 28px 30px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.period {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.org {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.78;
+}
+
+/* Status card at the bottom */
+.statusCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: 16px;
+  flex-wrap: wrap;
+}
+
+.statusDot {
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { box-shadow: 0 0 0 0 var(--glow); }
+  50%       { box-shadow: 0 0 0 7px transparent; }
+}
+
+.statusLabel {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.statusText {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.statusIcon {
+  color: var(--accent);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ── RESPONSIVE: stack to single column on mobile ── */
+@media (max-width: 720px) {
+  .line { left: 20px; }
+
+  .item {
+    padding-right: 0 !important;
+    padding-left: 60px !important;
+    justify-content: flex-start !important;
+  }
+
+  .dot {
+    left: 20px;
+    width: 32px; height: 32px;
+  }
+
+  .card { padding: 22px; }
+  .statusCard { gap: 14px; }
+}
