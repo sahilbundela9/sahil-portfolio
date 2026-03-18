@@ -1,5 +1,5 @@
 import { ThemeProvider } from './context/ThemeContext'
-import AnimatedBackground from './components/Animatedbackground'
+import AnimatedBackground from './components/AnimatedBackground'
 import CustomCursor from './components/CustomCursor'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
