@@ -6,10 +6,11 @@ import styles from './Navbar.module.css'
 const links = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'AI Tools', href: '#ai-tools' },
   { label: 'Projects', href: '#projects' },
   { label: 'Journey', href: '#journey' },
-  { label: 'Contact', href: '#contact' },
-  { label: 'AI Tools', href: '#ai-tools' }
+  { label: 'Contact', href: '#contact' }
+
 
 ]
 
